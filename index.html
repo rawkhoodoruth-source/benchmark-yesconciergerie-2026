@@ -8,46 +8,46 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f1f5f9;color:#1e293b;min-height:100vh}
-.wrap{max-width:1100px;margin:0 auto;padding:1.2rem}
-.hdr{background:linear-gradient(135deg,#1e3a8a,#1a56db);color:#fff;padding:1.4rem 1.6rem;border-radius:12px 12px 0 0}
-.hdr h1{font-size:17px;font-weight:600;margin-bottom:4px}
-.hdr p{font-size:12px;opacity:.8}
+.wrap{max-width:1100px;margin:0 auto;padding:1rem}
+.hdr{background:linear-gradient(135deg,#1e3a8a,#1a56db);color:#fff;padding:1.2rem 1.4rem;border-radius:12px 12px 0 0}
+.hdr h1{font-size:16px;font-weight:600;margin-bottom:4px}
+.hdr p{font-size:11.5px;opacity:.8}
 .badge{display:inline-block;margin-top:.5rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:2px 12px;font-size:10px}
 .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;margin-bottom:1.2rem;box-shadow:0 1px 4px rgba(0,0,0,.05)}
-.tabs{display:flex;background:#fff;border-bottom:1px solid #e2e8f0;overflow-x:auto}
-.tab{flex:1;padding:.6rem .5rem;font-size:11.5px;text-align:center;cursor:pointer;color:#64748b;border:none;background:none;border-bottom:2.5px solid transparent;transition:.15s;white-space:nowrap;min-width:90px}
+.tabs{display:flex;background:#fff;border-bottom:1px solid #e2e8f0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;padding:.55rem .75rem;font-size:11px;text-align:center;cursor:pointer;color:#64748b;border:none;background:none;border-bottom:2.5px solid transparent;transition:.15s;white-space:nowrap}
 .tab.active{color:#1a56db;border-bottom-color:#1a56db;font-weight:600}
 .tab:hover:not(.active){background:#f8fafc}
-.pane{display:none;padding:1.2rem}
+.pane{display:none;padding:1rem}
 .pane.active{display:block}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-bottom:1rem}
-.kpi{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:.8rem 1rem}
-.kpi .lbl{font-size:10px;color:#64748b;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
-.kpi .val{font-size:20px;font-weight:600;color:#1a56db}
-.kpi .sub{font-size:10px;color:#94a3b8;margin-top:2px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:7px;margin-bottom:1rem}
+.kpi{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:.7rem .9rem}
+.kpi .lbl{font-size:9.5px;color:#64748b;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+.kpi .val{font-size:19px;font-weight:600;color:#1a56db}
+.kpi .sub{font-size:9.5px;color:#94a3b8;margin-top:2px}
 .chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
-@media(max-width:640px){.chart-grid{grid-template-columns:1fr}}
 .chart-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:.85rem 1rem}
-.chart-card h3{font-size:10.5px;font-weight:600;color:#64748b;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.chart-card h3{font-size:10px;font-weight:600;color:#64748b;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:.04em}
 .bar-row{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:10px}
-.bar-lbl{width:110px;flex-shrink:0;color:#64748b;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar-track{flex:1;background:#f1f5f9;border-radius:99px;height:10px;overflow:hidden}
+.bar-lbl{width:100px;flex-shrink:0;color:#64748b;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{flex:1;background:#f1f5f9;border-radius:99px;height:9px;overflow:hidden}
 .bar-fill{height:100%;border-radius:99px}
-.bar-val{width:60px;font-size:10px;font-weight:500;color:#334155}
-.tbl-wrap{overflow:auto;border-radius:10px;border:1px solid #e2e8f0;max-height:400px}
-table{width:100%;border-collapse:collapse;font-size:11px}
-thead th{background:#1e3a8a;color:#fff;padding:7px 9px;text-align:left;white-space:nowrap;position:sticky;top:0;font-weight:500}
+.bar-val{width:55px;font-size:9.5px;font-weight:500;color:#334155}
+.tbl-wrap{overflow:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid #e2e8f0;max-height:420px}
+table{width:100%;border-collapse:collapse;font-size:11px;min-width:500px}
+thead th{background:#1e3a8a;color:#fff;padding:7px 9px;text-align:left;white-space:nowrap;position:sticky;top:0;font-weight:500;font-size:10.5px}
 tbody tr{border-bottom:1px solid #f1f5f9}
 tbody tr:hover{background:#f8fafc}
 tbody tr.yes-row td{background:#eff6ff}
-tbody td{padding:6px 9px;vertical-align:top;color:#334155}
+tbody td{padding:5px 8px;vertical-align:top;color:#334155;font-size:10.5px}
 .sh-hdr td{background:#f1f5f9;color:#1a56db;font-weight:600;font-size:10px;letter-spacing:.05em;border-top:1px solid #bfdbfe}
-.tag{display:inline-block;border-radius:99px;padding:2px 8px;font-size:9.5px;font-weight:600;white-space:nowrap}
+.tag{display:inline-block;border-radius:99px;padding:2px 7px;font-size:9px;font-weight:600;white-space:nowrap}
 .tb{background:#dbeafe;color:#1e40af}.tv{background:#d1fae5;color:#065f46}.ty{background:#fef3c7;color:#92400e}.tr{background:#fee2e2;color:#991b1b}
-.warn{background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:.6rem .8rem;font-size:11px;color:#92400e;margin-bottom:.8rem;display:flex;gap:6px}
+.warn{background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:.55rem .75rem;font-size:11px;color:#92400e;margin-bottom:.75rem;display:flex;gap:6px;align-items:flex-start}
 .toolbar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.7rem}
-.toolbar input,.toolbar select{font-size:11px;padding:6px 9px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;color:#334155}
-.toolbar input{flex:1;min-width:140px}
+.toolbar input,.toolbar select{font-size:11px;padding:6px 9px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;color:#334155;width:100%}
+.toolbar input{flex:1;min-width:0}
 .conc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
 .conc-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:.85rem;transition:.15s}
 .conc-card:hover{box-shadow:0 2px 10px rgba(0,0,0,.07)}
@@ -58,65 +58,64 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
 .crow .k{color:#64748b}.crow .v{font-weight:500;text-align:right;max-width:55%}
 .note-box{margin-top:.5rem;font-size:10px;color:#64748b;background:#f8fafc;border-radius:6px;padding:5px 8px}
 .gl-sec h2{font-size:12px;font-weight:600;color:#1a56db;margin:1.2rem 0 .6rem;padding-bottom:4px;border-bottom:1px solid #bfdbfe;text-transform:uppercase;letter-spacing:.05em}
-.gl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}
+.gl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:9px}
 .gl-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:.8rem 1rem}
 .gl-item .term{font-size:12px;font-weight:600;margin-bottom:4px;color:#1e293b}
 .gl-item .def{font-size:10.5px;color:#64748b;line-height:1.6}
 .gl-item .impact{font-size:10px;margin-top:6px;padding:3px 7px;background:#fef3c7;border-radius:5px;color:#92400e}
 .src-list{list-style:none;display:flex;flex-direction:column;gap:6px}
 .src-list li{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:6px 11px;font-size:11px;color:#334155}
-.yes-intro{background:#eff6ff;border-left:3px solid #1a56db;border-radius:0 10px 10px 0;padding:1rem 1.1rem;margin-bottom:1rem}
-.yes-intro h2{font-size:13.5px;font-weight:600;color:#1a56db;margin-bottom:.3rem}
+.yes-intro{background:#eff6ff;border-left:3px solid #1a56db;border-radius:0 10px 10px 0;padding:.9rem 1rem;margin-bottom:1rem}
+.yes-intro h2{font-size:13px;font-weight:600;color:#1a56db;margin-bottom:.3rem}
 .yes-intro p{font-size:11px;color:#334155;line-height:1.7}
 .yes-costs{background:#fff;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:1rem;overflow:hidden}
-.yes-costs-hdr{background:#1e3a8a;color:#fff;padding:8px 11px;font-size:11.5px;font-weight:600}
+.yes-costs-hdr{background:#1e3a8a;color:#fff;padding:8px 11px;font-size:11px;font-weight:600}
 .cost-section-title{background:#f8fafc;padding:5px 11px;font-size:10px;font-weight:700;color:#1a56db;letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid #e2e8f0}
-.cost-row{display:flex;justify-content:space-between;align-items:center;padding:6px 11px;border-bottom:1px solid #f1f5f9;font-size:11px}
+.cost-row{display:flex;justify-content:space-between;align-items:center;padding:6px 11px;border-bottom:1px solid #f1f5f9;font-size:11px;gap:6px;flex-wrap:wrap}
 .cost-row:last-child{border:none}
-.cost-row .camount{font-weight:600;color:#1e40af;text-align:right;max-width:55%}
-.cbadge{font-size:9.5px;padding:2px 7px;border-radius:99px;font-weight:500}
+.cost-row .camount{font-weight:600;color:#1e40af;text-align:right}
+.cbadge{font-size:9px;padding:2px 7px;border-radius:99px;font-weight:500;white-space:nowrap}
 .cbadge-ob{background:#fee2e2;color:#991b1b}
 .cbadge-op{background:#f3f4f6;color:#374151}
 .cbadge-re{background:#d1fae5;color:#065f46}
-.total-bar{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center}
+.total-bar{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:.8rem 1rem;margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
 .total-item .tl{font-size:10px;color:#64748b;margin-bottom:2px}
-.total-item .tv2{font-size:15px;font-weight:700;color:#1a56db}
-.comp-wrap{overflow:auto;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:1rem}
-.comp-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
+.total-item .tv2{font-size:14px;font-weight:700;color:#1a56db}
+.comp-wrap{overflow:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:1rem}
+.comp-tbl{width:100%;border-collapse:collapse;font-size:10.5px;min-width:500px}
 .comp-tbl th{background:#1e3a8a;color:#fff;padding:7px 9px;text-align:left;font-weight:500;white-space:nowrap}
 .comp-tbl td{padding:6px 9px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
 .comp-tbl tr.yes td{background:#eff6ff;font-weight:600}
 .reco-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:.8rem}
-@media(max-width:640px){.reco-grid{grid-template-columns:1fr}}
 .reco-card{border-radius:10px;padding:.9rem 1rem;border:1px solid}
 .reco-up{background:#f0fdf4;border-color:#86efac}.reco-down{background:#fef2f2;border-color:#fca5a5}.reco-ok{background:#eff6ff;border-color:#93c5fd}
-.reco-card h3{font-size:11.5px;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:6px}
+.reco-card h3{font-size:11px;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:6px}
 .reco-up h3{color:#15803d}.reco-down h3{color:#b91c1c}.reco-ok h3{color:#1d4ed8}
 .reco-card ul{list-style:none;display:flex;flex-direction:column;gap:5px}
 .reco-card li{font-size:10.5px;color:#334155;padding-left:.9rem;position:relative;line-height:1.6}
 .reco-card li::before{content:"•";position:absolute;left:0;color:#94a3b8}
 .verdict{background:#1e3a8a;color:#fff;border-radius:10px;padding:1rem 1.1rem;font-size:11px;line-height:1.8}
 .verdict strong{color:#93c5fd}
-.edit-toolbar{display:flex;align-items:center;gap:8px;margin-bottom:1rem;padding:.7rem 1rem;background:#fef3c7;border:1px solid #fde68a;border-radius:10px}
-.edit-toolbar span{font-size:11px;color:#92400e;font-weight:500;flex:1}
-.btn{padding:6px 14px;border-radius:8px;border:none;cursor:pointer;font-size:11px;font-weight:500;transition:.15s}
+.edit-toolbar{display:flex;align-items:center;gap:8px;margin-bottom:1rem;padding:.65rem .9rem;background:#fef3c7;border:1px solid #fde68a;border-radius:10px;flex-wrap:wrap}
+.edit-toolbar span{font-size:11px;color:#92400e;font-weight:500;flex:1;min-width:120px}
+.btn{padding:6px 13px;border-radius:8px;border:none;cursor:pointer;font-size:11px;font-weight:500;transition:.15s}
 .btn-edit{background:#1a56db;color:#fff}.btn-edit:hover{background:#1e40af}
 .btn-save{background:#059669;color:#fff}.btn-save:hover{background:#047857}
 .btn-cancel{background:#fff;color:#334155;border:1px solid #e2e8f0}.btn-cancel:hover{background:#f8fafc}
-.prop-hero{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #86efac;border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1rem}
-.prop-hero h2{font-size:14px;font-weight:700;color:#15803d;margin-bottom:.3rem}
+.prop-hero{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1.5px solid #86efac;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem}
+.prop-hero h2{font-size:13px;font-weight:700;color:#15803d;margin-bottom:.3rem}
 .prop-hero p{font-size:11px;color:#334155;line-height:1.7}
-.prop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:1rem}
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:1rem}
 .prop-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
-.prop-card-hdr{padding:.75rem 1rem;font-size:12px;font-weight:700;display:flex;align-items:center;gap:8px}
+.prop-card-hdr{padding:.7rem 1rem;font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:8px}
 .prop-current .prop-card-hdr{background:#fef2f2;color:#b91c1c}
 .prop-new .prop-card-hdr{background:#f0fdf4;color:#15803d}
-.prop-card-body{padding:.85rem 1rem}
+.prop-card-body{padding:.8rem 1rem}
 .prop-row{display:flex;justify-content:space-between;align-items:flex-start;padding:5px 0;border-bottom:1px solid #f1f5f9;font-size:11px;gap:8px}
 .prop-row:last-child{border:none}
 .prop-row .pk{color:#64748b;flex:1}.prop-row .pv{font-weight:600;text-align:right;max-width:55%}
 .prop-row .pv.red{color:#b91c1c}.prop-row .pv.green{color:#059669}.prop-row .pv.blue{color:#1a56db}
-.delta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:1rem}
+.delta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:1rem}
 .delta-card{border-radius:10px;padding:.8rem 1rem;border:1px solid}
 .delta-up{background:#f0fdf4;border-color:#86efac}
 .delta-keep{background:#f0f9ff;border-color:#bae6fd}
@@ -124,7 +123,7 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
 .delta-card .dt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem}
 .delta-up .dt{color:#15803d}.delta-keep .dt{color:#0369a1}.delta-down .dt{color:#c2410c}
 .delta-card .dd{font-size:11px;color:#334155;line-height:1.7}
-.impact-tbl{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:1rem}
+.impact-tbl{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:1rem;min-width:480px}
 .impact-tbl th{background:#f8fafc;color:#64748b;font-weight:600;font-size:10px;padding:6px 9px;text-align:left;border-bottom:1px solid #e2e8f0}
 .impact-tbl td{padding:6px 9px;border-bottom:1px solid #f1f5f9}
 .impact-tbl tr:hover td{background:#f8fafc}
@@ -135,6 +134,53 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
 .rationale ul{list-style:none;display:flex;flex-direction:column;gap:4px}
 .rationale li{font-size:11px;color:#334155;padding-left:1rem;position:relative;line-height:1.6}
 .rationale li::before{content:"→";position:absolute;left:0;color:#1a56db}
+@media(max-width:768px){
+  .wrap{padding:.7rem}
+  .hdr{padding:1rem 1.1rem;border-radius:10px 10px 0 0}
+  .hdr h1{font-size:14px}
+  .chart-grid{grid-template-columns:1fr}
+  .kpis{grid-template-columns:repeat(3,1fr)}
+  .reco-grid{grid-template-columns:1fr}
+  .conc-grid{grid-template-columns:1fr}
+  .gl-grid{grid-template-columns:1fr}
+  .prop-grid{grid-template-columns:1fr}
+  .delta-grid{grid-template-columns:1fr}
+  .total-bar{flex-direction:column;align-items:flex-start;gap:.7rem}
+  .pane{padding:.8rem}
+}
+@media(max-width:480px){
+  .wrap{padding:.5rem}
+  .hdr{padding:.85rem 1rem}
+  .hdr h1{font-size:13px}
+  .hdr p{font-size:11px}
+  .badge{font-size:9px;padding:2px 8px}
+  .kpis{grid-template-columns:repeat(2,1fr);gap:6px}
+  .kpi .val{font-size:16px}
+  .pane{padding:.65rem}
+  .tab{padding:.5rem .6rem;font-size:10.5px}
+  .tbl-wrap{max-height:320px}
+  .cost-row{flex-direction:column;align-items:flex-start;gap:3px}
+  .cost-row .camount{text-align:left}
+  .edit-toolbar{flex-direction:column;align-items:flex-start}
+  .edit-toolbar span{min-width:0;width:100%}
+  .yes-intro h2{font-size:12px}
+  .reco-card li{font-size:10px}
+  .verdict{font-size:10.5px;line-height:1.7}
+  .prop-hero h2{font-size:12px}
+  .de-counter{flex-direction:column;gap:.6rem}
+  .de-counter .dc-total{font-size:19px}
+  .builder-layout{grid-template-columns:1fr}
+  .recap-grid{grid-template-columns:repeat(2,1fr)}
+  .brow{flex-wrap:wrap;gap:5px}
+  .brow .edit-amt{width:80px}
+  .new-item-row{flex-wrap:wrap}
+  .new-item-row input{min-width:0}
+  .bar-lbl{width:80px;font-size:9px}
+  .bar-val{width:45px;font-size:9px}
+  .warn{font-size:10px}
+  .gl-item .term{font-size:11px}
+  .gl-item .def{font-size:10px}
+}
 </style>
 </head>
 <body>
@@ -149,9 +195,9 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
     <button class="tab active" onclick="showTab('synthese',this)"><i class="ti ti-chart-bar"></i> Synthèse</button>
     <button class="tab" onclick="showTab('enseignes',this)"><i class="ti ti-building"></i> Toutes les enseignes</button>
     <button class="tab" onclick="showTab('conc',this)"><i class="ti ti-home"></i> Focus Conciergerie</button>
-    <button class="tab" onclick="showTab('gloss',this)"><i class="ti ti-book"></i> Glossaire & Sources</button>
     <button class="tab" onclick="showTab('yes',this)" style="color:#1a56db;font-weight:600"><i class="ti ti-search"></i> Analyse Yes ★</button>
     <button class="tab" onclick="showTab('propale',this)" style="color:#059669;font-weight:600"><i class="ti ti-bulb"></i> Propale Tarifaire ★</button>
+    <button class="tab" onclick="showTab('gloss',this)"><i class="ti ti-book"></i> Glossaire & Sources</button>
   </div>
 
   <!-- SYNTHESE -->
@@ -226,12 +272,10 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
     <div style="display:flex;justify-content:flex-end;margin-bottom:.8rem">
       <button class="btn btn-edit" id="edit-btn" onclick="startEdit()"><i class="ti ti-pencil"></i> Modifier l'analyse</button>
     </div>
-
     <div class="yes-intro">
       <h2>Yes Conciergerie — analyse complète basée sur le contrat réel (DIP)</h2>
       <p id="yes-intro-text">Décomposition de tous les postes de coûts issus de l'article 9 du contrat de franchise, comparés aux autres réseaux de conciergerie du benchmark.</p>
     </div>
-
     <div class="yes-costs">
       <div class="yes-costs-hdr">Décomposition des coûts Yes Conciergerie — article 9 du contrat</div>
       <div class="cost-section-title">Frais d'entrée (one-off)</div>
@@ -255,21 +299,18 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
       <div class="cost-row"><span>Google Ads — 6 premiers mois</span><span style="display:flex;gap:6px;align-items:center"><span class="cbadge cbadge-op">Option</span><span class="camount">3 000 €HT</span></span></div>
       <div class="cost-row"><span>Pack SEO renforcé — 20 hyperlinks supplémentaires</span><span style="display:flex;gap:6px;align-items:center"><span class="cbadge cbadge-op">Option</span><span class="camount">2 000 €HT</span></span></div>
     </div>
-
     <div class="total-bar">
       <div class="total-item"><div class="tl">Charges fixes obligatoires an 1 (hors 6 %)</div><div class="tv2">6 050 €HT/an</div></div>
       <div class="total-item"><div class="tl">Plancher redevance réseau an 1 &amp; 2</div><div class="tv2">8 500 €HT/an</div></div>
       <div class="total-item"><div class="tl">Total socle obligatoire an 1</div><div class="tv2" style="color:#b91c1c">~14 550 €HT/an</div></div>
       <div class="total-item"><div class="tl">Avec toutes options Ads/SEO</div><div class="tv2" style="color:#b91c1c">~22 550 €HT</div></div>
     </div>
-
     <div class="comp-wrap">
       <table class="comp-tbl">
         <thead><tr><th>Réseau</th><th>Type</th><th>Droit d'entrée</th><th>Redevance réseau</th><th>Charges fixes/an (hors % CA)</th><th>Apport min.</th><th>Zone excl.</th></tr></thead>
         <tbody id="yes-body"></tbody>
       </table>
     </div>
-
     <div class="reco-grid">
       <div class="reco-card reco-up">
         <h3><i class="ti ti-arrow-up-circle"></i> Ce qu'il faut renforcer / clarifier</h3>
@@ -307,104 +348,158 @@ tbody td{padding:6px 9px;vertical-align:top;color:#334155}
 
   <!-- PROPALE TARIFAIRE -->
   <div class="pane" id="pane-propale">
-    <div class="prop-hero">
-      <h2><i class="ti ti-bulb"></i> Proposition de nouvelle grille tarifaire Yes Conciergerie</h2>
-      <p>Basée sur l'analyse benchmark 2026. Objectif : <strong>maintenir le revenu réseau</strong> tout en améliorant l'attractivité et la lisibilité face aux concurrents directs (Primo, Aline, La Conciergerie.fr).</p>
+    <style>
+    .builder-layout{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1rem}
+    @media(max-width:700px){.builder-layout{grid-template-columns:1fr}}
+    .builder-panel{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+    .builder-panel-hdr{padding:.7rem 1rem;font-size:11.5px;font-weight:700;display:flex;align-items:center;gap:8px;border-bottom:1px solid #e2e8f0}
+    .builder-panel-hdr.red{background:#fef2f2;color:#b91c1c}
+    .builder-panel-hdr.green{background:#f0fdf4;color:#15803d}
+    .builder-panel-body{padding:.5rem}
+    .brow{display:flex;align-items:center;gap:8px;padding:5px 7px;border-radius:8px;font-size:11px;margin-bottom:3px;transition:.15s;border:1px solid transparent}
+    .brow.in-de{background:#eff6ff;border-color:#bfdbfe}
+    .brow.out{background:#f8fafc;border-color:#e2e8f0}
+    .brow.fixed{background:#f8fafc;border-color:#e2e8f0;opacity:.8;cursor:default}
+    .brow .bname{flex:1;color:#334155}
+    .brow .bamt{font-weight:600;color:#1e40af;white-space:nowrap}
+    .brow .bamt.red{color:#b91c1c}
+    .brow .bamt.green{color:#059669}
+    .brow .bamt.orange{color:#c2410c}
+    .brow .toggle-de{width:28px;height:28px;border-radius:7px;border:1.5px solid #bfdbfe;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:.15s;flex-shrink:0}
+    .brow.in-de .toggle-de{background:#1a56db;border-color:#1a56db;color:#fff}
+    .brow .toggle-de:hover{background:#dbeafe}
+    .brow.in-de .toggle-de:hover{background:#1e40af}
+    .brow .edit-amt{width:90px;font-size:11px;padding:3px 6px;border:1px solid #bfdbfe;border-radius:6px;color:#1e40af;font-weight:600;text-align:right}
+    .de-counter{background:linear-gradient(135deg,#1e3a8a,#1a56db);color:#fff;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .de-counter .dc-base{font-size:11px;opacity:.8}
+    .de-counter .dc-total{font-size:22px;font-weight:700}
+    .de-counter .dc-breakdown{font-size:10.5px;opacity:.75;flex:1}
+    .de-counter .dc-badge{background:rgba(255,255,255,.2);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:600}
+    .new-item-row{display:flex;gap:6px;margin-top:6px;padding-top:6px;border-top:1px dashed #e2e8f0}
+    .new-item-row input{flex:1;font-size:11px;padding:5px 8px;border:1px solid #e2e8f0;border-radius:7px}
+    .new-item-row input.amt{width:80px;flex:none}
+    .btn-add-item{padding:5px 10px;background:#1a56db;color:#fff;border:none;border-radius:7px;font-size:11px;cursor:pointer;white-space:nowrap}
+    .btn-add-item:hover{background:#1e40af}
+    .section-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;padding:4px 7px;margin-top:4px}
+    .recap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:1rem}
+    .recap-kpi{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:.7rem .9rem}
+    .recap-kpi .rl{font-size:10px;color:#64748b;margin-bottom:2px}
+    .recap-kpi .rv{font-size:16px;font-weight:700}
+    .recap-kpi .rv.blue{color:#1a56db}.recap-kpi .rv.green{color:#059669}.recap-kpi .rv.red{color:#b91c1c}.recap-kpi .rv.orange{color:#c2410c}
+    .hint{font-size:10px;color:#94a3b8;margin-top:4px;font-style:italic}
+    </style>
+
+    <div class="prop-hero" style="margin-bottom:1rem">
+      <h2><i class="ti ti-bulb"></i> Builder tarifaire interactif — Yes Conciergerie</h2>
+      <p>Cliquez sur le <strong>bouton ↑</strong> d'une ligne pour l'absorber dans le droit d'entrée. Modifiez les montants directement. Le total se recalcule en temps réel.</p>
     </div>
 
-    <div class="prop-grid">
-      <div class="prop-card prop-current">
-        <div class="prop-card-hdr"><i class="ti ti-x"></i> Grille actuelle (à retravailler)</div>
-        <div class="prop-card-body">
-          <div class="prop-row"><span class="pk">Droit d'entrée</span><span class="pv red">N.C. (contrat)</span></div>
-          <div class="prop-row"><span class="pk">Redevance réseau</span><span class="pv red">6 % CA</span></div>
-          <div class="prop-row"><span class="pk">Plancher mensuel (M+4)</span><span class="pv red">650 €HT/mois</span></div>
-          <div class="prop-row"><span class="pk">Plancher an 1 &amp; 2</span><span class="pv red">8 500 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Plancher an 3</span><span class="pv red">9 500 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Redev. marketing (fixe)</span><span class="pv red">2 800 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Community mgmt</span><span class="pv red">250 €HT/mois</span></div>
-          <div class="prop-row"><span class="pk">Maintenance site</span><span class="pv red">250 €/an</span></div>
-          <div class="prop-row"><span class="pk">Pack informatique</span><span class="pv red">446–523 €HT (one-off)</span></div>
-          <div class="prop-row"><span class="pk">Total socle an 1</span><span class="pv red">~14 550 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Lisibilité</span><span class="pv red">⚠ 10+ lignes éclatées</span></div>
+    <div class="de-counter">
+      <div>
+        <div class="dc-base">Droit d'entrée actuel</div>
+        <div style="font-size:13px;font-weight:500;opacity:.7;text-decoration:line-through">19 800 €HT</div>
+      </div>
+      <div style="font-size:20px;opacity:.5">→</div>
+      <div>
+        <div class="dc-base">Nouveau droit d'entrée proposé</div>
+        <div class="dc-total" id="de-total">19 800 €HT</div>
+      </div>
+      <div class="dc-breakdown" id="de-breakdown">Base : 19 800 € — aucune ligne absorbée</div>
+      <div class="dc-badge" id="de-badge">+0 €</div>
+    </div>
+
+    <div class="builder-layout">
+      <div class="builder-panel">
+        <div class="builder-panel-hdr red"><i class="ti ti-list"></i> Grille actuelle — lignes séparées</div>
+        <div class="builder-panel-body">
+          <div class="section-label">Frais fixes récurrents</div>
+          <div class="brow fixed" data-id="rev"><span class="bname">Redevance réseau</span><span class="bamt red">6 % CA</span></div>
+          <div class="brow fixed" data-id="plancher"><span class="bname">Plancher an 1&amp;2 (M+4)</span><span class="bamt red">8 500 €HT/an</span></div>
+          <div class="section-label">Charges absorbables dans le DE</div>
+          <div class="brow out" data-id="pack-info" data-amount="523" data-label="Pack informatique">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Pack informatique</span>
+            <input class="edit-amt" value="523" onchange="updateAmt(this)" title="Modifier le montant"> €HT
+          </div>
+          <div class="brow out" data-id="setup-rs" data-amount="180" data-label="Setup réseaux sociaux">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Setup réseaux sociaux</span>
+            <input class="edit-amt" value="180" onchange="updateAmt(this)" title="Modifier le montant"> €HT
+          </div>
+          <div class="brow out" data-id="mktg" data-amount="2800" data-label="Redevance marketing">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Redevance marketing</span>
+            <input class="edit-amt" value="2800" onchange="updateAmt(this)" title="Modifier le montant"> €HT/an
+          </div>
+          <div class="brow out" data-id="cm" data-amount="3000" data-label="Community management (12 mois)">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Community mgmt (an 1)</span>
+            <input class="edit-amt" value="3000" onchange="updateAmt(this)" title="Modifier le montant"> €HT/an
+          </div>
+          <div class="brow out" data-id="maint" data-amount="250" data-label="Maintenance site">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Maintenance site</span>
+            <input class="edit-amt" value="250" onchange="updateAmt(this)" title="Modifier le montant"> €HT/an
+          </div>
+          <div class="section-label">Nouvelles lignes à intégrer</div>
+          <div class="brow out" data-id="leads" data-amount="150" data-label="Lead proprio (par deal closé)">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Lead proprio — par deal closé</span>
+            <input class="edit-amt" value="150" onchange="updateAmt(this)" title="Modifier le montant"> €/deal
+          </div>
+          <div class="brow out" data-id="outil" data-amount="0" data-label="Outil de gestion interne">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Outil de gestion interne <span style="font-size:9px;color:#f59e0b">● en construction</span></span>
+            <input class="edit-amt" value="0" onchange="updateAmt(this)" placeholder="À définir" title="Modifier le montant"> €HT
+          </div>
+          <div class="brow out" data-id="setup-sept" data-amount="0" data-label="Setup franchisés sept. 2026">
+            <button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button>
+            <span class="bname">Setup franchisés sept. 2026 <span style="font-size:9px;color:#1a56db">● nouveau</span></span>
+            <input class="edit-amt" value="0" onchange="updateAmt(this)" placeholder="À définir" title="Modifier le montant"> €HT
+          </div>
+          <div class="new-item-row">
+            <input id="new-item-name" placeholder="Nouvelle ligne…">
+            <input id="new-item-amt" class="amt" placeholder="0" type="number">
+            <button class="btn-add-item" onclick="addCustomItem()">+ Ajouter</button>
+          </div>
         </div>
       </div>
-      <div class="prop-card prop-new">
-        <div class="prop-card-hdr"><i class="ti ti-check"></i> Proposition nouvelle grille</div>
-        <div class="prop-card-body">
-          <div class="prop-row"><span class="pk">Droit d'entrée tout compris</span><span class="pv green">15 000 – 25 000 €HT</span></div>
-          <div class="prop-row"><span class="pk">Redevance réseau</span><span class="pv green">6 % CA (maintenu)</span></div>
-          <div class="prop-row"><span class="pk">Plancher mensuel (M+6)</span><span class="pv green">500 €HT/mois</span></div>
-          <div class="prop-row"><span class="pk">Plancher an 1 &amp; 2</span><span class="pv green">6 000 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Plancher an 3</span><span class="pv green">8 000 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Pack réseau tout-en-un</span><span class="pv green">350 €HT/mois</span></div>
-          <div class="prop-row"><span class="pk">↳ inclus : mktg + CM + maintenance</span><span class="pv blue">4 200 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Pack info + setup inclus dans DE</span><span class="pv green">Offert</span></div>
-          <div class="prop-row"><span class="pk">Total socle an 1 (hors 6 %)</span><span class="pv green">~10 200 €HT/an</span></div>
-          <div class="prop-row"><span class="pk">Lisibilité</span><span class="pv green">✅ 3 postes clairs</span></div>
+
+      <div class="builder-panel">
+        <div class="builder-panel-hdr green"><i class="ti ti-check"></i> Nouvelle grille proposée</div>
+        <div class="builder-panel-body">
+          <div class="section-label">Droit d'entrée (one-off)</div>
+          <div class="brow in-de" style="cursor:default">
+            <span style="font-size:16px">🔑</span>
+            <span class="bname"><strong>Droit d'entrée tout compris</strong></span>
+            <span class="bamt green" id="de-display">19 800 €HT</span>
+          </div>
+          <div id="de-included-list" style="padding-left:8px;margin-top:2px;margin-bottom:6px;font-size:10px;color:#64748b"></div>
+          <div class="section-label">Charges récurrentes restantes</div>
+          <div id="remaining-list">
+            <div class="brow fixed"><span class="bname">Redevance réseau</span><span class="bamt">6 % CA (plancher 650€HT/mois à M+4)</span></div>
+          </div>
+          <div class="section-label">Nouvelles lignes variables</div>
+          <div id="variable-list">
+            <div class="brow fixed" style="background:#fefce8;border-color:#fde68a"><span class="bname">Lead proprio closé</span><span class="bamt orange">150 €/deal</span></div>
+            <div class="brow fixed" style="background:#f0fdf4;border-color:#bbf7d0"><span class="bname">Outil de gestion</span><span class="bamt green" id="outil-preview">À définir</span></div>
+            <div class="brow fixed" style="background:#eff6ff;border-color:#bfdbfe"><span class="bname">Setup sept. 2026</span><span class="bamt blue" id="setup-preview">À définir</span></div>
+          </div>
+          <div class="hint">Les lignes absorbées dans le DE disparaissent de "Charges récurrentes".</div>
         </div>
       </div>
     </div>
 
-    <div class="delta-grid">
-      <div class="delta-card delta-down">
-        <div class="dt">🔻 Ce qui baisse</div>
-        <div class="dd">
-          <strong>Plancher an 1 :</strong> 8 500 → 6 000 €HT/an (–2 500 €)<br>
-          <strong>Plancher mensuel :</strong> 650 → 500 €HT/mois (–150 €)<br>
-          <strong>Déclenchement :</strong> M+4 → M+6 (plus de temps pour monter en charge)<br>
-          <strong>Nb postes facturés :</strong> 10+ → 3 lignes claires
-        </div>
-      </div>
-      <div class="delta-card delta-keep">
-        <div class="dt">➡ Ce qui reste stable</div>
-        <div class="dd">
-          <strong>Redevance réseau :</strong> 6 % CA inchangé<br>
-          <strong>Channel manager :</strong> refacturé aux propriétaires (inchangé)<br>
-          <strong>Options Ads/SEO :</strong> disponibles à la demande (hors socle)<br>
-          <strong>Zone exclusive :</strong> à clarifier et maintenir
-        </div>
-      </div>
-      <div class="delta-card delta-up">
-        <div class="dt">🔺 Ce qui est restructuré</div>
-        <div class="dd">
-          <strong>Droit d'entrée affiché :</strong> 15–25k€ tout compris (pack info + setup inclus)<br>
-          <strong>Pack réseau mensuel :</strong> 350 €HT/mois = mktg + CM + maintenance réunis<br>
-          <strong>Plancher an 3 :</strong> 8 000 €HT (lisible et prévisible)
-        </div>
-      </div>
+    <div class="recap-grid">
+      <div class="recap-kpi"><div class="rl">DE actuel</div><div class="rv red">19 800 €HT</div></div>
+      <div class="recap-kpi"><div class="rl">DE proposé</div><div class="rv blue" id="recap-de">19 800 €HT</div></div>
+      <div class="recap-kpi"><div class="rl">Lignes absorbées</div><div class="rv green" id="recap-absorbed">0</div></div>
+      <div class="recap-kpi"><div class="rl">Charges récurrentes restantes</div><div class="rv orange" id="recap-recurring">6 % CA + plancher</div></div>
+      <div class="recap-kpi"><div class="rl">Nouvelles lignes variables</div><div class="rv blue">3 (leads + outil + setup)</div></div>
     </div>
 
-    <h3 style="font-size:12px;font-weight:700;color:#1e293b;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.04em">Impact financier estimé sur 3 ans (franchisé CA cible 130 000 €HT/an)</h3>
-    <div class="tbl-wrap" style="margin-bottom:1rem">
-      <table class="impact-tbl">
-        <thead><tr><th>Poste</th><th>Actuel an 1</th><th>Proposé an 1</th><th>Actuel an 3</th><th>Proposé an 3</th><th>Évolution</th></tr></thead>
-        <tbody>
-          <tr><td>Redevance réseau 6 % (CA 130k€)</td><td>7 800 €</td><td>7 800 €</td><td>7 800 €</td><td>7 800 €</td><td><span class="pill pill-b">= stable</span></td></tr>
-          <tr><td>Plancher (si redev. &lt; plancher)</td><td>8 500 €</td><td>6 000 €</td><td>9 500 €</td><td>8 000 €</td><td><span class="pill pill-g">–2 500 € an1</span></td></tr>
-          <tr><td>Marketing + CM + maintenance</td><td>6 050 €</td><td>4 200 €</td><td>6 050 €</td><td>4 200 €</td><td><span class="pill pill-g">–1 850 €/an</span></td></tr>
-          <tr><td>Pack info (one-off)</td><td>523 €</td><td>Inclus DE</td><td>—</td><td>—</td><td><span class="pill pill-g">Neutralisé</span></td></tr>
-          <tr><td><strong>Total charges réseau an 1</strong></td><td><strong>14 550 €</strong></td><td><strong>10 200 €</strong></td><td><strong>15 550 €</strong></td><td><strong>12 200 €</strong></td><td><span class="pill pill-g">–4 350 € an1</span></td></tr>
-          <tr><td>Droit d'entrée (one-off)</td><td>N.C.</td><td>15–25 000 €</td><td>—</td><td>—</td><td><span class="pill pill-y">Affiché = +CA réseau</span></td></tr>
-          <tr style="background:#f0fdf4"><td><strong>Revenu réseau total 3 ans</strong></td><td colspan="2"><strong>Actuel : ~46 650 € (hors DE)</strong></td><td colspan="2"><strong>Proposé : ~46 600 € + 15–25k€ DE</strong></td><td><span class="pill pill-g">+15–25k€ DE</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="rationale">
-      <h3><i class="ti ti-zoom-question"></i> Pourquoi cette structure est plus compétitive</h3>
-      <ul>
-        <li>Un droit d'entrée affiché à 15–25k€ tout compris positionne Yes dans la même fourchette que Primo (25–50k€) et La Conciergerie.fr (15–35k€) — le candidat peut comparer immédiatement</li>
-        <li>Passer le plancher de M+4 à M+6 réduit la pression sur la montée en charge (principale objection des candidats interrogés)</li>
-        <li>Regrouper marketing + community mgmt + maintenance dans un "Pack réseau 350 €/mois" simplifie la lecture et supprime l'effet "à chaque ligne une surprise"</li>
-        <li>Le revenu réseau total sur 3 ans est quasi identique (voire supérieur grâce au DE affiché), mais la perception candidat est radicalement améliorée</li>
-        <li>La redevance 6 % n'est pas touchée : c'est le levier principal du franchiseur et le marché le tolère jusqu'à 6 %</li>
-        <li>Le channel manager reste refacturé aux propriétaires — l'avantage compétitif réel est préservé</li>
-      </ul>
-    </div>
-
-    <div style="background:#1e3a8a;color:#fff;border-radius:10px;padding:1rem 1.1rem;font-size:11px;line-height:1.8">
-      <strong style="color:#93c5fd">Recommandation finale :</strong> Adopter cette grille pour le prochain cycle de recrutement franchisés (H2 2026). Prioriser l'affichage du droit d'entrée et le regroupement des charges en "Pack réseau mensuel" — deux changements de présentation qui ne coûtent rien au réseau mais éliminent les 2 principales objections des candidats en phase de discovery.
+    <div class="verdict" id="prop-verdict" style="margin-bottom:.8rem">
+      <strong style="color:#93c5fd">Logique de la propale :</strong> En absorbant les frais annexes dans le droit d'entrée, la grille devient lisible en 2 lignes (DE + redevance 6 %). Les nouvelles lignes variables (leads proprio 150€/deal, outil de gestion, setup sept.) génèrent du revenu additionnel sans alourdir le socle récurrent perçu par le franchisé.
     </div>
   </div>
 </div>
@@ -621,7 +716,108 @@ function loadSavedEdits(){
   try{const data=JSON.parse(localStorage.getItem('yes-edits')||'{}');editableIds.forEach(id=>{if(data[id]){const el=document.getElementById(id);if(el)el.innerHTML=data[id];}});}catch(e){}
 }
 
-renderCharts();renderSyn();renderEnseignes();filterConc();renderGloss();renderYes();loadSavedEdits();
+const DE_BASE = 19800;
+function getRows(){return document.querySelectorAll('#pane-propale .brow[data-id]');}
+function calcDE(){
+  let extra=0, labels=[];
+  getRows().forEach(row=>{
+    if(row.classList.contains('in-de')){
+      const amt=parseFloat(row.querySelector('.edit-amt')?.value||0)||0;
+      const lbl=row.dataset.label||row.querySelector('.bname')?.textContent?.trim()||'';
+      if(amt>0){extra+=amt;labels.push({lbl,amt});}
+    }
+  });
+  return {total:DE_BASE+extra,extra,labels};
+}
+function refreshDE(){
+  const {total,extra,labels}=calcDE();
+  const fmt=n=>n.toLocaleString('fr-FR')+' €HT';
+  document.getElementById('de-total').textContent=fmt(total);
+  document.getElementById('de-display').textContent=fmt(total);
+  document.getElementById('recap-de').textContent=fmt(total);
+  document.getElementById('de-badge').textContent=(extra>0?'+':'')+extra.toLocaleString('fr-FR')+' €';
+  document.getElementById('de-breakdown').textContent=
+    extra>0 ? 'Base 19 800 € + absorbés : '+labels.map(l=>l.lbl+' ('+l.amt.toLocaleString('fr-FR')+'€)').join(', ')
+            : 'Base : 19 800 € — aucune ligne absorbée';
+  const incl=document.getElementById('de-included-list');
+  incl.innerHTML=labels.length ? labels.map(l=>`<span style="display:inline-block;margin:1px 3px 1px 0;background:#dbeafe;color:#1e40af;border-radius:5px;padding:1px 7px;font-size:9.5px">✓ ${l.lbl} — ${l.amt.toLocaleString('fr-FR')} €</span>`).join('') : '';
+  refreshRemaining();
+  const outilAmt=parseFloat(document.querySelector('[data-id="outil"] .edit-amt')?.value||0)||0;
+  const setupAmt=parseFloat(document.querySelector('[data-id="setup-sept"] .edit-amt')?.value||0)||0;
+  const leadsAmt=parseFloat(document.querySelector('[data-id="leads"] .edit-amt')?.value||0)||0;
+  const el=document.getElementById('outil-preview');if(el)el.textContent=outilAmt?outilAmt.toLocaleString('fr-FR')+' €HT':'À définir';
+  const se=document.getElementById('setup-preview');if(se)se.textContent=setupAmt?setupAmt.toLocaleString('fr-FR')+' €HT':'À définir';
+  const le=document.querySelector('#variable-list .brow:first-child .bamt');if(le)le.textContent=leadsAmt?leadsAmt.toLocaleString('fr-FR')+' €/deal':'150 €/deal';
+  const state={};
+  getRows().forEach(r=>{state[r.dataset.id]={inDE:r.classList.contains('in-de'),amt:r.querySelector('.edit-amt')?.value||0};});
+  try{localStorage.setItem('builder-state',JSON.stringify(state));}catch(e){}
+}
+function refreshRemaining(){
+  const list=document.getElementById('remaining-list');
+  let html='<div class="brow fixed"><span class="bname">Redevance réseau</span><span class="bamt">6 % CA (plancher 650€HT/mois à M+4)</span></div>';
+  getRows().forEach(row=>{
+    if(!row.classList.contains('in-de')&&!row.classList.contains('fixed')){
+      const id=row.dataset.id;
+      if(['pack-info','setup-rs','mktg','cm','maint'].includes(id)){
+        const lbl=row.dataset.label||'';
+        const amt=parseFloat(row.querySelector('.edit-amt')?.value||0)||0;
+        const fmted=amt?amt.toLocaleString('fr-FR')+' €HT':'À définir';
+        html+=`<div class="brow out" style="opacity:.85"><span class="bname">${lbl}</span><span class="bamt red">${fmted}</span></div>`;
+      }
+    }
+  });
+  const absorbed=document.querySelectorAll('#pane-propale .brow.in-de[data-id]').length;
+  document.getElementById('recap-absorbed').textContent=absorbed;
+  const recurLines=['pack-info','setup-rs','mktg','cm','maint'].filter(id=>{
+    const r=document.querySelector(`[data-id="${id}"]`);return r&&r.classList.contains('out');
+  });
+  document.getElementById('recap-recurring').textContent=
+    recurLines.length ? '6% CA + '+recurLines.length+' ligne(s)' : '6 % CA uniquement ✅';
+  list.innerHTML=html;
+}
+function toggleDE(btn){
+  const row=btn.closest('.brow');
+  const isIn=row.classList.contains('in-de');
+  row.classList.toggle('in-de',!isIn);
+  row.classList.toggle('out',isIn);
+  btn.textContent=isIn?'↑':'↓';
+  btn.title=isIn?'Absorber dans le DE':'Retirer du DE';
+  refreshDE();
+}
+function updateAmt(input){
+  const id=input.closest('.brow')?.dataset.id;
+  if(id==='outil'||id==='setup-sept'||id==='leads'){refreshDE();return;}
+  refreshDE();
+}
+function addCustomItem(){
+  const name=document.getElementById('new-item-name').value.trim();
+  const amt=parseFloat(document.getElementById('new-item-amt').value)||0;
+  if(!name)return;
+  const id='custom-'+Date.now();
+  const row=document.createElement('div');
+  row.className='brow out';row.dataset.id=id;row.dataset.label=name;row.dataset.amount=amt;
+  row.innerHTML=`<button class="toggle-de" onclick="toggleDE(this)" title="Absorber dans le DE">↑</button><span class="bname">${name}</span><input class="edit-amt" value="${amt}" onchange="updateAmt(this)" title="Modifier"> €HT<button onclick="this.closest('.brow').remove();refreshDE()" style="margin-left:auto;background:none;border:none;cursor:pointer;color:#94a3b8;font-size:14px" title="Supprimer">×</button>`;
+  document.querySelector('#pane-propale .builder-panel:first-child .builder-panel-body .new-item-row').before(row);
+  document.getElementById('new-item-name').value='';document.getElementById('new-item-amt').value='';
+  refreshDE();
+}
+function loadBuilderState(){
+  try{
+    const state=JSON.parse(localStorage.getItem('builder-state')||'{}');
+    Object.entries(state).forEach(([id,{inDE,amt}])=>{
+      const row=document.querySelector(`[data-id="${id}"]`);
+      if(!row)return;
+      const input=row.querySelector('.edit-amt');if(input&&amt)input.value=amt;
+      if(inDE&&!row.classList.contains('fixed')){
+        row.classList.add('in-de');row.classList.remove('out');
+        const btn=row.querySelector('.toggle-de');if(btn){btn.textContent='↓';btn.title='Retirer du DE';}
+      }
+    });
+    refreshDE();
+  }catch(e){refreshDE();}
+}
+
+renderCharts();renderSyn();renderEnseignes();filterConc();renderGloss();renderYes();loadSavedEdits();loadBuilderState();
 </script>
 </body>
 </html>
