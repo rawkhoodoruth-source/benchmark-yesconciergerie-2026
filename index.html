@@ -502,9 +502,9 @@ tbody td{padding:5px 8px;vertical-align:top;color:#334155;font-size:10.5px}
       <div class="recap-kpi"><div class="rl">DE actuel</div><div class="rv red">19 800 €HT</div></div>
       <div class="recap-kpi"><div class="rl">DE proposé</div><div class="rv blue" id="recap-de">19 800 €HT</div></div>
       <div class="recap-kpi"><div class="rl">Lignes absorbées</div><div class="rv green" id="recap-absorbed">0</div></div>
-      <div class="recap-kpi"><div class="rl">Charges récurrentes restantes</div><div class="rv orange" id="recap-recurring">6 % CA + plancher</div></div>
-      <div class="recap-kpi"><div class="rl">Total charges hors DE (€HT/an)</div><div class="rv red" id="recap-charges-hors-de">6 050 €HT</div></div>
-      <div class="recap-kpi"><div class="rl">Nouvelles lignes variables</div><div class="rv blue">6 (leads + outil + setup + channel mgr)</div></div>
+      <div class="recap-kpi"><div class="rl">Royalties — plancher fixe an 1&2</div><div class="rv orange" id="recap-plancher">8 500 €HT/an</div></div>
+      <div class="recap-kpi"><div class="rl">Total charges annuelles hors DE</div><div class="rv red" id="recap-total-annuel">—</div></div>
+      <div class="recap-kpi"><div class="rl">Moyenne mensuelle hors DE</div><div class="rv" style="color:#7c3aed" id="recap-mensuel">—</div></div>
     </div>
 
     <div class="verdict" id="prop-verdict" style="margin-bottom:.8rem">
@@ -786,23 +786,24 @@ function refreshRemaining(){
   });
   const absorbed=document.querySelectorAll('#pane-propale .brow.in-de[data-id]').length;
   document.getElementById('recap-absorbed').textContent=absorbed;
-  const remaining=document.querySelectorAll('#pane-propale .brow.out[data-id]').length;
-  const recurLines=['pack-info','setup-rs','mktg','cm','maint'].filter(id=>{
-    const r=document.querySelector(`[data-id="${id}"]`);return r&&r.classList.contains('out');
-  });
-  document.getElementById('recap-recurring').textContent=
-    recurLines.length ? '6% CA + '+recurLines.length+' ligne(s)' : '6 % CA uniquement ✅';
-  // total charges hors DE
+  // plancher
+  const plancherVal=parseFloat(document.getElementById('plancher-amt')?.value||8500)||8500;
+  const elPlancher=document.getElementById('recap-plancher');
+  if(elPlancher)elPlancher.textContent=plancherVal.toLocaleString('fr-FR')+' €HT/an';
+  // total annuel hors DE = plancher + charges non absorbées
   const absorbableIds=['pack-info','setup-rs','mktg','cm','maint'];
-  let totalHorsDE=0;
+  let chargesHorsDE=0;
   absorbableIds.forEach(id=>{
     const r=document.querySelector(`[data-id="${id}"]`);
     if(r&&r.classList.contains('out')){
-      totalHorsDE+=parseFloat(r.querySelector('.edit-amt')?.value||0)||0;
+      chargesHorsDE+=parseFloat(r.querySelector('.edit-amt')?.value||0)||0;
     }
   });
-  const elHorsDE=document.getElementById('recap-charges-hors-de');
-  if(elHorsDE)elHorsDE.textContent=totalHorsDE?totalHorsDE.toLocaleString('fr-FR')+' €HT/an':'—';
+  const totalAnnuel=plancherVal+chargesHorsDE;
+  const elTotal=document.getElementById('recap-total-annuel');
+  if(elTotal)elTotal.textContent=totalAnnuel.toLocaleString('fr-FR')+' €HT/an';
+  const elMensuel=document.getElementById('recap-mensuel');
+  if(elMensuel)elMensuel.textContent=Math.round(totalAnnuel/12).toLocaleString('fr-FR')+' €HT/mois';
   list.innerHTML=html;
 }
 
